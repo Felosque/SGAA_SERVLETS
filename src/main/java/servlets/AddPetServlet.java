@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -18,14 +20,13 @@ import services.PetsServices;
 public class AddPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private PetsServices petServices;
+	private PetsServices petServices = new PetsServices();
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
     public AddPetServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -42,18 +43,33 @@ public class AddPetServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
-		String color = request.getParameter("color");
-		String address = request.getParameter("address");
-		String date = request.getParameter("birthdate");
-		Date birthdate = new Date(date);
-		String br = request.getParameter("breed");
-		int breed = Integer.parseInt(br);
-		String mail = request.getParameter("mail");
-		String description = request.getParameter("description");
-		
-		
-		boolean res = petServices.addPet(name, color, address, birthdate, true, breed, mail, "", description);
+		try {
+			String name = request.getParameter("name");
+			String color = request.getParameter("color");
+			String address = request.getParameter("address");
+			String date = request.getParameter("birthdate");
+			Date birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+			
+			String br = request.getParameter("breed");
+			int breed = Integer.parseInt(br);
+			String mail = request.getParameter("mail");
+			String description = request.getParameter("description");
+			boolean res = petServices.addPet(name, color, address, birthdate, true, breed, mail, "", description);
+			
+			
+			if(res)
+			{
+				//¡Se registra el perro!
+			}
+			else
+			{
+				//No se pudo registrar el perro
+			}
+			
+		} catch (ParseException e) {
+			//Excepción de traducción de fecha
+			e.printStackTrace();
+		}
 		
 	}
 

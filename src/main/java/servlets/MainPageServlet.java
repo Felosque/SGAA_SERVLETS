@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import services.PetsServices;
-
 /**
- * Servlet implementation class DeletePetServlet
+ * Servlet implementation class MainPageServlet
  */
-@WebServlet("/DeletePetServlet.do")
-public class DeletePetServlet extends HttpServlet {
+@WebServlet("/MainPageServlet")
+public class MainPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private PetsServices petServices = new PetsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeletePetServlet() {
+    public MainPageServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,27 +26,16 @@ public class DeletePetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getRequestDispatcher("/WEB-INF/Views/deletepetpage.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-		boolean respuesta = petServices.deletePet(id);
-		
-		if(respuesta)
-		{
-			//Si se elimina la mascota
-			request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
-			
-		}else
-		{
-			//Si no se elimina la mascota.
-		}
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

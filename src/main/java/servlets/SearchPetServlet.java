@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.PetsServices;
+import sgaa.server.dto.PetDTO;
+
 /**
  * Servlet implementation class SearchPetServlet
  */
@@ -14,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 public class SearchPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private PetsServices petServices = new PetsServices();
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,16 +31,17 @@ public class SearchPetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		request.getRequestDispatcher("/WEB-INF/Views/searchpetpage.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		PetDTO pet = petServices.searchPet( Integer.parseInt(request.getParameter("id")));
 	}
 
 }

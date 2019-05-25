@@ -16,26 +16,22 @@ public class PetsServices {
 	}
 	
 	
-	public boolean deletePet()
+	public boolean deletePet(int id)
 	{
-		boolean res = false;
-		
+		boolean res = controller.getPet().delete(id);
 		return res;
 	}
 	
 	
-	public boolean searchPet()
-	{
-		boolean res = false;
-		
-		return res;
+	public PetDTO searchPet(int id)
+	{	
+		return controller.getPet().findById(id);
 	}
 	
 	
-	public boolean editPet()
+	public boolean editPet(int id, String name, String color, String address, Date birthdate, boolean state, int breed, String mail, String pPath, String pDescription)
 	{
-		boolean res = false;
-		
+		boolean res = controller.getPet().update(id, name, color, address, birthdate, state, breed, mail, pPath, pDescription);
 		return res;
 	}
 	
