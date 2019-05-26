@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import services.PetsServices;
 
 /**
- * Servlet implementation class AddPetServlet
+ * Servlet implementation class EditServlet
  */
-@WebServlet("/AddPetServlet.do")
-public class AddPetServlet extends HttpServlet {
+@WebServlet("/EditServlet.do")
+public class EditPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private PetsServices petServices = new PetsServices();
@@ -25,8 +25,9 @@ public class AddPetServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddPetServlet() {
+    public EditPetServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -34,14 +35,14 @@ public class AddPetServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/Views/addpetpage.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("/WEB-INF/Views/editpetpage.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 		try {
 			String name = request.getParameter("name");
@@ -50,21 +51,25 @@ public class AddPetServlet extends HttpServlet {
 			String date = request.getParameter("birthdate");
 			Date birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
 			
+			String ids = request.getParameter("breed");
+			int id = Integer.parseInt(ids);
+			
 			String br = request.getParameter("breed");
 			int breed = Integer.parseInt(br);
 			String mail = request.getParameter("mail");
 			String description = request.getParameter("description");
-			boolean res = petServices.addPet(name, color, address, birthdate, true, breed, mail, "", description);
+			
+			boolean res = petServices.editPet(id, name, color, address, birthdate, true, breed, mail, "", description);
 			
 			
 			if(res)
 			{
-				//¡Se registra el perro!}
+				//¡Se edita la mascota
 				request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 			}
 			else
 			{
-				//No se pudo registrar el perro
+				//No se pudo registrar la mascota
 			}
 			
 		} catch (ParseException e) {
@@ -74,4 +79,11 @@ public class AddPetServlet extends HttpServlet {
 		
 	}
 
+	
+	
+	
+	
+	
+	
+	
 }

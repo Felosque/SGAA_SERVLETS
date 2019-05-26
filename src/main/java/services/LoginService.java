@@ -2,6 +2,7 @@ package services;
 
 import conection.Conexion;
 import sgaa.server.controller.GeneralController;
+import sgaa.server.dto.OrganizationDTO;
 import sgaa.server.dto.UserDTO;
 
 public class LoginService {
@@ -12,16 +13,13 @@ public class LoginService {
 	{
 		boolean response = false;
 		try {
-		UserDTO userDto = controller.getUser().findById(user);
+		OrganizationDTO userDto = controller.getOrganization().findById(user);
 		String pass = userDto.getPassword();
 		if(userDto != null)
 		{
 			if(pass.equals(password))
 			{
 				response = true;
-			}else
-			{
-				System.out.println("Sí");
 			}
 		}
 		}catch (Exception e) {

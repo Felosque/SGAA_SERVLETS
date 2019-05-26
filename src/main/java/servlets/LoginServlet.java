@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet{
 
 		if(loginService.isUserValid(request.getParameter("name"), request.getParameter("password"))) {
 			
-			request.setAttribute("name", request.getParameter("name"));
-			request.getRequestDispatcher("/WEB-INF/Views/welcome.jsp").forward(request, response);
+			request.setAttribute("mail", request.getParameter("name"));
+			request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 		}else
 		{
 			request.setAttribute("messageError", "Credentials Wrong");

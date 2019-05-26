@@ -3,6 +3,7 @@ package services;
 import java.util.Date;
 
 import sgaa.server.controller.GeneralController;
+import sgaa.server.dataStructure.Stack.IStackArray;
 import sgaa.server.dto.PetDTO;
 
 public class PetsServices {
@@ -33,6 +34,11 @@ public class PetsServices {
 	{
 		boolean res = controller.getPet().update(id, name, color, address, birthdate, state, breed, mail, pPath, pDescription);
 		return res;
+	}
+	
+	public IStackArray<PetDTO> getAllPets(String mail)
+	{
+		return controller.getPet().findAll(mail);
 	}
 	
 }
