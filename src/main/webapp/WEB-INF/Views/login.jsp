@@ -3,27 +3,34 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-	<title>Hola xd</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../resources/img/SGAA.ico">
+	<title>Login</title>
+	<link rel="stylesheet" href="../resources/css/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
+	<body class="body">
+	<div class="container">
+      <form class="form-signin" role="form" action="login.do" method="post">
+      	<div class="form-logo img">
+      		<img  id="img" src="../resources/img/SGAA.jpg" alt="" >
+      	</div>
+        <h2 class="form-signin-heading">Login</h2>
+        <input type="text" class="form-control emailt" placeholder="Ingrese su usuario" name="name" required autofocus>
+        <br>
+        <input type="password" class="form-control" placeholder="Ingrese su Password" name="password" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="reset" value="Borrar">Borrar</button>
+      </form>
+    </div>
 
-
-	<body>
-	
-	<h1> <font color="RED"> ${messageError}</font></h1>
-	
-	
-	<form action="login.do" method="post">
-		  <p>Nombre: <input type="text" name="name" size="40"></p>
-		  <p>Password: <input type="password" name="password" size="40"></p>
-		  <p>
-		    <input type="submit" value="Enviar">
-		    <input type="reset" value="Borrar">
-		  </p>
-	</form>
-
-	
-	</body>
+</body>
 
 </html>
