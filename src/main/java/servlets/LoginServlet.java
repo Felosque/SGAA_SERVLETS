@@ -15,7 +15,8 @@ import services.LoginService;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet{
-
+	protected static String mail;
+	protected static String pass;
 	/**
 	 * 
 	 */
@@ -37,7 +38,8 @@ public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		mail = request.getParameter("name");
+		pass = request.getParameter("password");
 
 		if(loginService.isUserValid(request.getParameter("name"), request.getParameter("password"))) {
 			
@@ -45,12 +47,14 @@ public class LoginServlet extends HttpServlet{
 			request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 		}else
 		{
-			request.setAttribute("messageError", "Credentials Wrong");
+			request.setAttribute("messageError", "Nombre de usuario o contraseña incorrectos");
 			request.getRequestDispatcher("/WEB-INF/Views/login.jsp").forward(request, response);
 		}
 	}
 
-	
+	protected String darMail() {
+		return mail;
+	}
 	
 	
 	

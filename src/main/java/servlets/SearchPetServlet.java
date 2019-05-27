@@ -13,7 +13,7 @@ import sgaa.server.dto.PetDTO;
 /**
  * Servlet implementation class SearchPetServlet
  */
-@WebServlet("/SearchPetServlet")
+@WebServlet("/SearchPetServlet.do")
 public class SearchPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,6 +42,8 @@ public class SearchPetServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PetDTO pet = petServices.searchPet( Integer.parseInt(request.getParameter("id")));
+		
+		
 	}
 
 }

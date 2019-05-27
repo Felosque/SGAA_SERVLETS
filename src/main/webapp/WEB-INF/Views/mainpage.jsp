@@ -11,41 +11,31 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="../resources/img/SGAA.ico">
 	<title>Menu Principal</title>
-	<link rel="stylesheet" href="../resources/css/login.css">
+	<link rel="stylesheet" href="/resources/css/login.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
-	<body class="body">
+	<body style="background-color: #eee;" class="body" >
 	<div class="container">
+	¡Bienvenido! ${mail}
       <div class="form-logo img">
-        <img  id="img" src="../resources/img/SGAA.jpg" alt="" >
+        <img  id="img" src="/resources/img/SGAA.jpg" alt="" >
       </div>
       
       <div class="btn-group" role="group" aria-label="Basic example">
- 		<form action="EditServlet.do" method="post">
-		    <input class="btn btn-secondary" type="submit" value="Menu Principal">    
+	
+	<form action="AddPetServlet.do" method="get">
+		    <input class="btn btn-primary" type="submit" value="Añadir mascota">    
 	</form>
 	
-	<form  action="EditServlet.do" method="post">
-		    <input class="btn btn-primary" type="submit" value="Editar mascota">    
-	</form>
-	
-	<form action="AddPetServlet.do" method="post">
-		    <input class="btn btn-secondary" type="submit" value="Añadir mascota">    
-	</form>
-	
-	<form action="DeletePetServlet.do" method="post">
-		    <input class="btn btn-primary" type="submit" value="Eliminar mascota">    
-	</form>
-	
-	<form action="SerchPetServlet.do" method="post">
+	<form action="SearchPetServlet.do" method="get">
 		    <input class="btn btn-secondary" type="submit" value="Buscar mascota">    
 	</form>
 	
-	<form action="login.do" method="post">
+	<form action="login.do" method="get">
 		    <input class="btn btn-primary" type="submit" value="Información fundación">    
 	</form>
 	</div>
@@ -62,13 +52,15 @@
     </tr>
   </thead>
   <tbody>
+  
+  		<h2>${petsList.size()}</h2>
 		<c:forEach items="${petsList}" var="objeto">
 		     <tr>
-		     	<th scope="row"><c:out value="${objeto.getId()}"/></th>
+	     	<th scope="row">1</th>
       		<td><c:out value="${objeto.getName()}"/></td>
-     		<td><c:out value="${objeto.getName()}"/></td>
-     		<td><c:out value="${objeto.getName()}"/></td>
-     		<td><c:out value="${objeto.getName()}"/></td>
+     		<td><c:out value="${objeto.getcolor()}"/></td>
+     		<td><c:out value="${objeto.getBreed()}"/></td>
+     		<td><c:out value="${objeto.getState()}"/></td>
       <td>
         <center>        <form action="#" method="post">
           <input type="submit" name="" class="btn btn-success" value="Editar">
@@ -77,6 +69,7 @@
       </td>
 		     </tr>
 		</c:forEach>
-
+	</tbody>
+	
 	</body>
 </html>

@@ -1,7 +1,9 @@
 package servlets;
 
+import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,16 +38,20 @@ public class MainPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String mail = request.getParameter("mail");
-		IStackArray<PetDTO> stack =  petServices.getAllPets(mail);
+		System.out.println(mail);
+		String[] pets = new String[8];
+		java.util.List<PetDTO> stack =  petServices.getAllPets(mail).toArray();
+		System.out.println("----------------"+stack.get(0).toString());
 		
-		request.setAttribute("petsList", stack);
+		request.setAttribute("pets", stack);
 		request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		
 		
 		

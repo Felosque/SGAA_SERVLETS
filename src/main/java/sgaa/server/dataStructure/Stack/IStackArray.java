@@ -1,5 +1,8 @@
 package sgaa.server.dataStructure.Stack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class IStackArray<T> {
 
 	private IObjectStack<T> head;
@@ -106,6 +109,14 @@ public class IStackArray<T> {
 			travel = travel.getNextObject();
 		}
 		return travel;
+	}
+
+	public List<T> toArray() {
+		ArrayList<T> array = new ArrayList<T>();
+		for (int i = 0; i < size(); i++) {
+			array.add(get(i));
+		}
+		return array;
 	}
 	
 

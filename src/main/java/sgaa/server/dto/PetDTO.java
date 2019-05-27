@@ -22,10 +22,11 @@ import javax.imageio.ImageIO;
 import javax.imageio.stream.FileImageInputStream;
 import javax.swing.ImageIcon;
 
+import servlets.LoginServlet;
 import sgaa.server.infrastructure.Conexion;
 import sgaa.server.interfaces.Crud;
 
-public class PetDTO implements Crud
+public class PetDTO<T> implements Crud<T>
 {
 	private int id;
 	private String name;

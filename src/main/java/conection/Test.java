@@ -1,6 +1,8 @@
 package conection;
 
 import sgaa.server.controller.GeneralController;
+import sgaa.server.dataStructure.Stack.IStackArray;
+import sgaa.server.dto.PetDTO;
 
 public class Test {
 
@@ -9,15 +11,9 @@ public class Test {
 
 		GeneralController<GeneralController> controller = new GeneralController<GeneralController>();
 		
-		boolean response = false;
-		
-		String pass = controller.getUser().findById("re").getPassword();
-		if(pass.equals("123"))
-		{
-			response = true;
-		}
-		
-		System.out.println(response);
+		IStackArray<PetDTO> er =  controller.getPet().findAll("perritos");
+		System.out.println(er.get(0).getColor());
+		String pass = controller.getUser().findById("perritos").getPassword();
 		
 	}
 

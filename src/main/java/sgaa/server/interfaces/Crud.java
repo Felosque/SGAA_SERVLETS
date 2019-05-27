@@ -1,6 +1,6 @@
 package sgaa.server.interfaces;
 
-public interface Crud {
+public interface Crud<T>{
 	
 	public String insert();
 	

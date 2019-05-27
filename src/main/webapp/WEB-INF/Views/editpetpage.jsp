@@ -3,12 +3,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Editar pet</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../resources/img/SGAA.ico">
+	<title>Pet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<p>ESTA ES LA PAGINA PARA EDITAR EL PET</p>
-
+	<div class="container">
+	 <form action="/action_page.php">
+	<div class="form-group img">
+      	<center><img  id="img" src="../resources/img/SGAA.jpg" alt="" ></center>
+      </div>
+    <div class="form-group">
+    <label for="text">Nombre:</label>
+    <input type="text" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="text">Color:</label>
+    <input type="text" class="form-control" id="color">
+  </div>
+  <div class="form-group">
+    <label for="Date">Fecha de nacimiento:</label>
+    <input type="Date" class="form-control" id="birthdate">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Raza:</label>
+    <select class="form-control" id="breed">
+      <option>Chusky</option>
+      <option>Chandoberman</option>
+      <option>Gato</option>
+      <option>Pez</option>
+      <option>otro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripción:</label>
+    <textarea class="form-control" id="description" rows="3"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+</form>
+</div>
 </body>
 </html>
