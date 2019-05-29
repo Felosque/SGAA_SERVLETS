@@ -41,8 +41,9 @@ public class SearchPetServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		PetDTO pet = petServices.searchPet( Integer.parseInt(request.getParameter("id")));
-		
+//		PetDTO pet = petServices.searchPet( Integer.parseInt(request.getParameter("id")));
+		request.getRequestDispatcher("/WEB-INF/Views/constructionpage.jsp").forward(request, response);
+
 		
 	}
 

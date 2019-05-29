@@ -8,21 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import services.PetsServices;
-import sgaa.server.dataStructure.Stack.IStackArray;
-import sgaa.server.dto.BreedDTO;
+import sgaa.server.dto.PetDTO;
 
 /**
- * Servlet implementation class DeletePetServlet
+ * Servlet implementation class SearchPetServlet
  */
-@WebServlet("/DeletePetServlet.do")
-public class DeletePetServlet extends HttpServlet {
+@WebServlet("/ConstructionServlet.do")
+public class ContructionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private PetsServices petServices = new PetsServices();
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeletePetServlet() {
+    public ContructionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +31,9 @@ public class DeletePetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		IStackArray<BreedDTO> stack =  petServices.getAllBreeds();
-		request.setAttribute("breeds", stack);
-		request.getRequestDispatcher("/WEB-INF/Views/deletepage.jsp").forward(request, response);
+		
+		
+		request.getRequestDispatcher("/WEB-INF/Views/contructionpage.jsp").forward(request, response);
 	}
 
 	/**
@@ -41,18 +41,10 @@ public class DeletePetServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
-		boolean respuesta = petServices.deletePet(id);
+//		PetDTO pet = petServices.searchPet( Integer.parseInt(request.getParameter("id")));
+		request.getRequestDispatcher("/WEB-INF/Views/contructionpage.jsp").forward(request, response);
+
 		
-		if(respuesta)
-		{
-			//Si se elimina la mascota
-			request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
-			
-		}else
-		{
-			//Si no se elimina la mascota.
-		}
 	}
 
 }

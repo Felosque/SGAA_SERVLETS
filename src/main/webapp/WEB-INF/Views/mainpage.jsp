@@ -46,7 +46,7 @@
 				</td>			
 			    <td>
 					<form action="login.do" method="get">
-			    		<input class="btn btn-primary" type="submit" value="Información fundación">    
+			    		<input class="btn btn-primary" type="submit" value="Cerrar sesión">    
 					</form>
 				</td>
 	  		</tr>
@@ -67,6 +67,7 @@
 		    <th scope="col">Raza</th>
 		    <th scope="col">Estado</th>
 		    <th><center>Acciones</center> </th>
+		    <th><center></center> </th>
 		  </tr>
 		</thead>
 	  	<tbody>
@@ -84,9 +85,15 @@
 	     		<td><%= petServices.getBreed(pets.get(i).getBreed()) %></td>
 	     		<td><%= pets.get(i).isState()%></td>
 			    <td>
-					<center><form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					<center>
+					<form action="EditServlet.do" method="get">
+					  <input type="submit" name=<%= pets.get(i).getId() %> id= <%= pets.get(i).getId() %> class="btn btn-success" value="Editar">
+					</form>
+					</center>
+					</td>
+					<td><center>
+					<form action="DeletePetServlet.do" method="get">
+					  <input type="submit" name=<%= pets.get(i).getId() %> id= <%= pets.get(i).getId() %> class="btn btn-danger" value="Eliminar">
 					</form></center>
 			    </td>
 		    </tr>

@@ -2,7 +2,7 @@ package sgaa.server.dto;
 
 import sgaa.server.interfaces.Crud;
 
-public class BreedDTO implements Crud
+public class BreedDTO<T> implements Crud
 {
 	private int id;
 	private String species;

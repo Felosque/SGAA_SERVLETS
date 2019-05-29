@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import services.PetsServices;
+import sgaa.server.dataStructure.Stack.IStackArray;
+import sgaa.server.dto.BreedDTO;
 
 /**
  * Servlet implementation class EditServlet
@@ -34,7 +36,8 @@ public class EditPetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		IStackArray<BreedDTO> stack =  petServices.getAllBreeds();
+		request.setAttribute("breeds", stack);
 		request.getRequestDispatcher("/WEB-INF/Views/editpetpage.jsp").forward(request, response);
 	}
 
