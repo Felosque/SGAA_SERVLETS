@@ -33,6 +33,11 @@ public class DeletePetServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		IStackArray<BreedDTO> stack =  petServices.getAllBreeds();
 		request.setAttribute("breeds", stack);
+		
+		String sr[] = request.getParameter("id").split("-");
+		int id = Integer.parseInt(sr[0]);
+		
+		
 		request.getRequestDispatcher("/WEB-INF/Views/deletepage.jsp").forward(request, response);
 	}
 
@@ -41,7 +46,8 @@ public class DeletePetServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
+		String sr[] = request.getParameter("id").split("-");
+		int id = Integer.parseInt(sr[0]);
 		boolean respuesta = petServices.deletePet(id);
 		
 		if(respuesta)

@@ -87,13 +87,13 @@
 			    <td>
 					<center>
 					<form action="EditServlet.do" method="get">
-					  <input type="submit" name=<%= pets.get(i).getId() %> id= <%= pets.get(i).getId() %> class="btn btn-success" value="Editar">
+					  <input type="submit" name="as" id= <%= pets.get(i).getId() %> class="btn btn-success" value=<%= pets.get(i).getId() + "-"+ "Editar"%>>
 					</form>
 					</center>
 					</td>
 					<td><center>
-					<form action="DeletePetServlet.do" method="get">
-					  <input type="submit" name=<%= pets.get(i).getId() %> id= <%= pets.get(i).getId() %> class="btn btn-danger" value="Eliminar">
+					<form action="DeletePetServlet.do" method="post">
+					  <input type="submit" name="id" id= <%= pets.get(i).getId() %> class="btn btn-danger" value= <%= pets.get(i).getId() + "-"+ "Eliminar"%>>
 					</form></center>
 			    </td>
 		    </tr>

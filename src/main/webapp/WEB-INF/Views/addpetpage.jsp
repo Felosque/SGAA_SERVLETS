@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="AddPetServlet.do">
+		<form action="AddPetServlet.do" method="post" role="form">
 			<div class="form-group img">
 				<center>
 					<img id="img" src="../resources/img/SGAA.jpg" alt="">
@@ -30,32 +30,37 @@
 			</div>
 			<div class="form-group">
 				<label for="text">Nombre:</label> <input type="text"
-					class="form-control" id="name">
+					class="form-control" id="name" name="name">
 			</div>
 			<div class="form-group">
 				<label for="text">Color:</label> <input type="text"
-					class="form-control" id="color">
+					class="form-control" id="color" name="color">
 			</div>
 			<div class="form-group">
 				<label for="text">address:</label> <input type="text"
-					class="form-control" id="address">
+					class="form-control" id="address" name="address">
 			</div>
 			<div class="form-group">
-				<label for="Date">Fecha de nacimiento:</label> <input type="Date"
-					class="form-control" id="birthdate">
+				<label for="Date">Fecha de nacimiento:</label>
+					<input type="text" class="form-control" id="name" name="dia" placeholder="dia">
+					<input type="text" class="form-control" id="name" name="mes" placeholder="mes">
+					<input type="text"class="form-control" id="name" name="ano" placeholder="año">
+					
 			</div>
 			<div class="form-group">
 				<label for="pwd">Raza:</label> <select class="form-control"
-					id="breed">
+					id="breed" name="breed">
 					<% 
 					PetsServices petServices = new PetsServices();
 					IStackArray<BreedDTO> breeds = (IStackArray<BreedDTO>) request.getAttribute("breeds");;
 					for(int i = 0; i < breeds.size(); i++){ 
 		%>
-					<option ><%= breeds.get(i).getBreed() + " - "+ breeds.get(i).getSpecies()%></option>
+					<option name=<%= breeds.get(i).getId()%> ><%=breeds.get(i).getId()+ "-" + breeds.get(i).getBreed() + " - "+ breeds.get(i).getSpecies()%></option>
 		<%} %>
 				</select>
+				
 			</div>
+		
 			<div class="form-group">
 				<label for="exampleFormControlTextarea1">Descripción:</label>
 				<textarea class="form-control" id="description" rows="3"></textarea>

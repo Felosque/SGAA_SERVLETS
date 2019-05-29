@@ -38,6 +38,9 @@ public class EditPetServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		IStackArray<BreedDTO> stack =  petServices.getAllBreeds();
 		request.setAttribute("breeds", stack);
+		
+		String mail = request.getParameter("mail");
+		
 		request.getRequestDispatcher("/WEB-INF/Views/editpetpage.jsp").forward(request, response);
 	}
 
@@ -52,12 +55,14 @@ public class EditPetServlet extends HttpServlet {
 			String color = request.getParameter("color");
 			String address = request.getParameter("address");
 			String date = request.getParameter("birthdate");
+			System.out.println(date);
 			Date birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
 			
 			String ids = request.getParameter("breed");
 			int id = Integer.parseInt(ids);
 			
 			String br = request.getParameter("breed");
+			
 			int breed = Integer.parseInt(br);
 			String mail = request.getParameter("mail");
 			String description = request.getParameter("description");

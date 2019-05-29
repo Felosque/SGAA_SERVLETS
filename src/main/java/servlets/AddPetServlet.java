@@ -37,6 +37,10 @@ public class AddPetServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		IStackArray<BreedDTO> stack =  petServices.getAllBreeds();
 		request.setAttribute("breeds", stack);
+		
+		String mail = (String)request.getAttribute("mail");
+		request.setAttribute("mail", mail);
+		System.out.println(mail);
 		request.getRequestDispatcher("/WEB-INF/Views/addpetpage.jsp").forward(request, response);
 		
 	}
@@ -50,11 +54,13 @@ public class AddPetServlet extends HttpServlet {
 			String name = request.getParameter("name");
 			String color = request.getParameter("color");
 			String address = request.getParameter("address");
-			String date = request.getParameter("birthdate");
+			String date = request.getParameter("dia") + "/" + request.getParameter("mes") + "/" + request.getParameter("ano");
 			Date birthdate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
 			
 			String br = request.getParameter("breed");
-			int breed = Integer.parseInt(br);
+			String bv[] = br.split("-");
+			
+			int breed = Integer.parseInt(bv[0]);
 			String mail = request.getParameter("mail");
 			String description = request.getParameter("description");
 			boolean res = petServices.addPet(name, color, address, birthdate, true, breed, mail, "", description);

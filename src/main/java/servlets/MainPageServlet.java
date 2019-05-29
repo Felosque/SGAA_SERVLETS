@@ -41,6 +41,7 @@ public class MainPageServlet extends HttpServlet {
 		IStackArray<PetDTO> stack =  petServices.getAllPets(mail);
 		request.setAttribute("pets", stack);
 		
+		request.setAttribute("mail", mail);
 		request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 	}
 
