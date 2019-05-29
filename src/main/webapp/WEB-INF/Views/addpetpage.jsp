@@ -37,6 +37,10 @@
 					class="form-control" id="color">
 			</div>
 			<div class="form-group">
+				<label for="text">address:</label> <input type="text"
+					class="form-control" id="address">
+			</div>
+			<div class="form-group">
 				<label for="Date">Fecha de nacimiento:</label> <input type="Date"
 					class="form-control" id="birthdate">
 			</div>
@@ -57,7 +61,7 @@
 				<textarea class="form-control" id="description" rows="3"></textarea>
 			</div>
 
-			<button action="login.do" method="post" type="submit" class="btn btn-primary">Submit</button>
+			<button action="AddPetServlet.do" method="post" type="submit" class="btn btn-primary">Agregar</button>
 		</form>
 	</div>
 </body>
