@@ -11,10 +11,10 @@ public class Test {
 
 		GeneralController<GeneralController> controller = new GeneralController<GeneralController>();
 		
-		IStackArray<PetDTO> er =  controller.getPet().findAll("perritos");
+		IStackArray<PetDTO> er =  controller.getPet().findAll("clinicapequeños@gmail.com");
 		System.out.println(er.get(0).getColor());
-		String pass = controller.getUser().findById("perritos").getPassword();
-		
+		String pass = controller.getOrganization().findById("clinicapequeños@gmail.com").getPassword();
+		System.out.println(pass);
 	}
 
 }

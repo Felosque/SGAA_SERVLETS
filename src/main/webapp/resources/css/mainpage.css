@@ -1,0 +1,29 @@
+.body{
+	background-color: #11CF0B;
+}
+
+#btnGroup {
+   position:fixed;
+	width:90%;
+	height:40px;
+	border:1px solid #000;
+	left:10%;
+	top:100%;
+	margin-left:-100px;
+	margin-top:-100px;
+}
+
+#tableBotons{
+	width: 30%;
+}
+
+#tittle{
+	color:white;
+	font-size: 130px;
+}
+
+#ptittle{
+	color:white;
+	font-size: 15px;
+}
+

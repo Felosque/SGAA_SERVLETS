@@ -20,7 +20,7 @@ public class Conexion
 		
 		try {
 			
-			String url = "jdbc:postgresql://172.17.0.3:5432/sgaa";
+			String url = "jdbc:postgresql://localhost:5432/sgaa";
 			String user = "postgres";
 			String password = "postgres";
 			
