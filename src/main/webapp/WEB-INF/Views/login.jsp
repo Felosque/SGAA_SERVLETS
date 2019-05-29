@@ -17,9 +17,12 @@
 </head>
 	<body class="body">
 	
+	<div id="titleDiv">
 	<center><h1 class="form-signin-heading" id="tittle">SGAA</h1></center>
-        <center><h6 class="form-signin-heading" id="ptittle">Sistema De Gestión de Adopción de Mascotas</h6></center>
-	
+   	<center><h6 class="form-signin-heading" id="ptittle">Sistema de Gestión de Animales en Adopción</h6></center>
+   	<br>
+   	</div>
+   	<br><br><br>
 	<div class="container">
       <form class="form-signin" role="form" action="login.do" method="post">
         <input type="text" class="form-control emailt" placeholder="Ingrese su usuario" name="name" required autofocus>

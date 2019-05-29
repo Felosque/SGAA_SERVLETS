@@ -1,6 +1,4 @@
 .body {
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #11CF0B;
 }
 
@@ -78,11 +76,16 @@
 #tittle{
 	color:white;
 	font-size: 130px;
+	letter-spacing:12px;
 }
 
 #ptittle{
 	color:white;
 	font-size: 15px;
+}
+
+#titleDiv{
+	background-color: #095B07;
 }
 
 

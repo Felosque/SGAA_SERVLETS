@@ -19,14 +19,20 @@
 
 </head>
 	<body style="background-color: #11CF0B;"class="body"  >
-	<div class="container">
+	
+	<div id="titleDiv">
 	<center><h1 class="form-signin-heading" id="tittle">SGAA</h1></center>
-   	<center><h6 class="form-signin-heading" id="ptittle">Sistema De Gestión de Adopción de Mascotas</h6></center>
+   	<center><h6 class="form-signin-heading" id="ptittle">Sistema de Gestión de Animales en Adopción</h6></center>
+   	<br>
+   	</div>
+	<div class="container">
+	
 	<br>
-	
+	<center><h3>TUS MASCOTAS</h3></center>
+	<br>
     <div class="btn-group" role="group" aria-label="Basic example" id="btnGroup">
-	
-		<center><table id="tableBotons" >
+		<center>
+		<table id="tableBotons" >
 	  		<tr>
 			    <td>
 				    <form action="AddPetServlet.do" method="get">
@@ -53,34 +59,99 @@
    	</div>
       
     <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Color</th>
-      <th scope="col">Raza</th>
-      <th scope="col">Estado</th>
-      <th><center>Acciones</center> </th>
-    </tr>
-  </thead>
-  <tbody>
-  
-  		<h2>${petsList.size()}</h2>
-		<c:forEach items="${petsList}" var="objeto">
-		     <tr>
+		<thead class="table table-striped table-dark">
+		  <tr>
+		    <th scope="col">ID</th>
+		    <th scope="col">Nombre</th>
+		    <th scope="col">Color</th>
+		    <th scope="col">Raza</th>
+		    <th scope="col">Estado</th>
+		    <th><center>Acciones</center> </th>
+		  </tr>
+		</thead>
+	  	<tbody>
+	  		<tr>
 		     	<th scope="row">1</th>
-	      		<td><c:out value="${objeto.getName()}"/></td>
-	     		<td><c:out value="${objeto.getcolor()}"/></td>
-	     		<td><c:out value="${objeto.getBreed()}"/></td>
-	     		<td><c:out value="${objeto.getState()}"/></td>
-			      <td>
-			        <center>        <form action="#" method="post">
-			          <input type="submit" name="" class="btn btn-success" value="Editar">
-			          <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-			        </form></center>
-			      </td>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
 		    </tr>
-		</c:forEach>
-	</tbody>
+		    <tr>
+		     	<th scope="row">1</th>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
+		    </tr>
+		    <tr>
+		     	<th scope="row">1</th>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
+		    </tr>
+		    <tr>
+		     	<th scope="row">1</th>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
+		    </tr>
+		    <tr>
+		     	<th scope="row">1</th>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
+		    </tr>
+		    <tr>
+		     	<th scope="row">1</th>
+	      		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+	     		<td>Prueba</td>
+			    <td>
+					<center>        <form action="#" method="post">
+					  <input type="submit" name="" class="btn btn-success" value="Editar">
+					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
+					</form></center>
+			    </td>
+		    </tr>
+	  		
+		</tbody>
+	</table>
+	<br><br><br><br><br><br>
+	
 	</body>
 </html>
