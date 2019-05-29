@@ -86,8 +86,8 @@
 	     		<td><%= pets.get(i).isState()%></td>
 			    <td>
 					<center>
-					<form action="EditServlet.do" method="get">
-					  <input type="submit" name="as" id= <%= pets.get(i).getId() %> class="btn btn-success" value=<%= pets.get(i).getId() + "-"+ "Editar"%>>
+					<form action="ConstructionServlet.do" method="get">
+					  <input type="submit" name="id" id= <%= pets.get(i).getId() %> class="btn btn-success" value=<%= pets.get(i).getId() + "-"+ "Editar"%>>
 					</form>
 					</center>
 					</td>

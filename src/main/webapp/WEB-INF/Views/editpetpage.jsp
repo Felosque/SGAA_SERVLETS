@@ -1,3 +1,4 @@
+<%@page import="sgaa.server.dto.PetDTO"%>
 <%@page import="sgaa.server.dto.BreedDTO"%>
 <%@page import="services.PetsServices"%>
 <%@page import="sgaa.server.dataStructure.Stack.IStackArray"%>
@@ -22,9 +23,10 @@
 	<div class="form-group img">
       	<center><img  id="img" src="../resources/img/SGAA.jpg" alt="" ></center>
       </div>
+      <%PetDTO pet = (PetDTO)request.getAttribute("pet"); %>
     <div class="form-group">
     <label for="text">Nombre:</label>
-    <input type="text" class="form-control" id="name">
+    <input type="text" class="form-control" id="name"  value=<%= pet.getName()%>>
   </div>
   <div class="form-group">
     <label for="text">Color:</label>

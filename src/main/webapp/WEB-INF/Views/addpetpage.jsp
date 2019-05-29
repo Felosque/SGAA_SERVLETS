@@ -28,6 +28,7 @@
 					<img id="img" src="../resources/img/SGAA.jpg" alt="">
 				</center>
 			</div>
+			
 			<div class="form-group">
 				<label for="text">Nombre:</label> <input type="text"
 					class="form-control" id="name" name="name">

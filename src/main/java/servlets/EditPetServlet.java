@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import services.PetsServices;
 import sgaa.server.dataStructure.Stack.IStackArray;
 import sgaa.server.dto.BreedDTO;
+import sgaa.server.dto.PetDTO;
 
 /**
  * Servlet implementation class EditServlet
@@ -41,6 +42,12 @@ public class EditPetServlet extends HttpServlet {
 		
 		String mail = request.getParameter("mail");
 		
+		String sr[] = request.getParameter("idPet").split("-");
+		int id = Integer.parseInt(sr[0]);
+		
+		PetDTO pet = petServices.searchPet(id);
+		request.setAttribute("pet", pet);
+		
 		request.getRequestDispatcher("/WEB-INF/Views/editpetpage.jsp").forward(request, response);
 	}
 
@@ -51,6 +58,14 @@ public class EditPetServlet extends HttpServlet {
 		
 		
 		try {
+
+			String sr[] = request.getParameter("idPet").split("-");
+			int idpet = Integer.parseInt(sr[0]);
+			
+			PetDTO pet = petServices.searchPet(idpet);
+			request.setAttribute("pet", pet);
+			
+			
 			String name = request.getParameter("name");
 			String color = request.getParameter("color");
 			String address = request.getParameter("address");
