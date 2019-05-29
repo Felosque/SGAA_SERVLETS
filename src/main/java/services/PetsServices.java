@@ -4,6 +4,7 @@ import java.util.Date;
 
 import sgaa.server.controller.GeneralController;
 import sgaa.server.dataStructure.Stack.IStackArray;
+import sgaa.server.dto.BreedDTO;
 import sgaa.server.dto.PetDTO;
 
 public class PetsServices {
@@ -41,4 +42,13 @@ public class PetsServices {
 		return controller.getPet().findAll(mail);
 	}
 	
+	public String getBreed(int id)
+	{
+		return controller.getBreed().findById(id).getBreed();
+	}
+	
+	public IStackArray<BreedDTO> getAllBreeds()
+	{
+		return controller.getBreed().findAll();
+	}
 }

@@ -81,7 +81,7 @@
 		     	<th scope="row"><%= pets.get(i).getId() %></th>
 	      		<td><%= pets.get(i).getName()%></td>
 	     		<td><%= pets.get(i).getColor() %></td>
-	     		<td><%= pets.get(i).getBreed() %></td>
+	     		<td><%= petServices.getBreed(pets.get(i).getBreed()) %></td>
 	     		<td><%= pets.get(i).isState()%></td>
 			    <td>
 					<center><form action="#" method="post">
