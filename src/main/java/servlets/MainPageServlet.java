@@ -38,12 +38,9 @@ public class MainPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String mail = request.getParameter("mail");
-		System.out.println(mail);
-		String[] pets = new String[8];
-		java.util.List<PetDTO> stack =  petServices.getAllPets(mail).toArray();
-		System.out.println("----------------"+stack.get(0).toString());
-		
+		IStackArray<PetDTO> stack =  petServices.getAllPets(mail);
 		request.setAttribute("pets", stack);
+		
 		request.getRequestDispatcher("/WEB-INF/Views/mainpage.jsp").forward(request, response);
 	}
 

@@ -70,84 +70,28 @@
 		  </tr>
 		</thead>
 	  	<tbody>
+	  	
+		<% 
+		String mails = (String)request.getAttribute("mail");
+		PetsServices petServices = new PetsServices();
+		IStackArray<PetDTO> pets = petServices.getAllPets(mails);
+		for(int i = 0; i < pets.size(); i++){ 
+		%>
 	  		<tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
+		     	<th scope="row"><%= pets.get(i).getId() %></th>
+	      		<td><%= pets.get(i).getName()%></td>
+	     		<td><%= pets.get(i).getColor() %></td>
+	     		<td><%= pets.get(i).getBreed() %></td>
+	     		<td><%= pets.get(i).isState()%></td>
 			    <td>
-					<center>        <form action="#" method="post">
+					<center><form action="#" method="post">
 					  <input type="submit" name="" class="btn btn-success" value="Editar">
 					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
 					</form></center>
 			    </td>
 		    </tr>
-		    <tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-			    <td>
-					<center>        <form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-					</form></center>
-			    </td>
-		    </tr>
-		    <tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-			    <td>
-					<center>        <form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-					</form></center>
-			    </td>
-		    </tr>
-		    <tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-			    <td>
-					<center>        <form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-					</form></center>
-			    </td>
-		    </tr>
-		    <tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-			    <td>
-					<center>        <form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-					</form></center>
-			    </td>
-		    </tr>
-		    <tr>
-		     	<th scope="row">1</th>
-	      		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-	     		<td>Prueba</td>
-			    <td>
-					<center>        <form action="#" method="post">
-					  <input type="submit" name="" class="btn btn-success" value="Editar">
-					  <input type="submit" name="" class="btn btn-danger" value="Eliminar">
-					</form></center>
-			    </td>
-		    </tr>
+		<%} %>
+
 	  		
 		</tbody>
 	</table>
